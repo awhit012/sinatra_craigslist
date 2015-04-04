@@ -6,12 +6,7 @@ gem 'sinatra'
 gem 'shotgun'
 gem 'rake'
 gem 'activerecord'
-gem 'sinatra-activerecord' # excellent gem that ports ActiveRecord for Sinatra
 
-group :development, :test do
-  gem 'sqlite3'
-end
+gem "sinatra-activerecord", "2.0.0.rc2"
 
-group :production do
-  gem 'pg' # this gem is required to use postgres on Heroku
-end
+gem 'pg' # this gem is required to use postgres on Heroku

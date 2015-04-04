@@ -1,6 +1,6 @@
 require 'bundler/setup'
 require 'sinatra/activerecord'
-require './config/environments'
+require './config/environment'
 Bundler.require(:default)
 
 $LOAD_PATH.unshift(File.expand_path('.'))
