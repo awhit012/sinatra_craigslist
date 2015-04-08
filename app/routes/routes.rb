@@ -1,4 +1,4 @@
- get '/' do
+get '/' do
   @categories = Category.all
   erb :index
 end
@@ -22,11 +22,11 @@ get "/categories/:id" do
     erb :category_template, layout: false
   end
 end
-
 post '/posts/new_post' do
   params[:url] = (1..1000000).to_a.sample.to_s(16)
-  @post = Post.create(params)
-  redirect :/
+  p params
+  @my_post = Post.create(params)
+  redirect '/posts/' + params[:url]
 end
 
 get '/posts/:id' do
@@ -39,15 +39,25 @@ get '/posts/:id' do
   end
 end
 
-get '/posts/:post_url' do
+get '/posts/my_post' do
+  @my_post ||= Post.find_by! url: params[:post_url]
+  unless request.xhr?
+    erb :my_post_template
+  else
+    erb :my_post_template, layout: false
+  end
+
+end
+
+get '/posts/edit_post' do
   @my_post = Post.find_by! url: params[:post_url]
-  p @my_post
-  erb :my_post_template
-end
-
-get '/posts/:post_url/edit' do
-  "whatupbitcheses"
+  erb :post_form
 end
 
 
 
+
+
+
+
+# /:description/:email/:price/:category

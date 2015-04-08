@@ -2,6 +2,11 @@
 <h2> <%= @my_post.description %> </h2>
 <h3> Email: <%= @my_post.email %> </h3>
 <h3> Price: $<%= @my_post.price %> </h3>
-<form action="posts/:post_url/edit" method="get">
-  <input type="submit" value="Edit">
-</form>
+<h3> Category:
+  <% if Category.exists?(@my_post.category_id) %>
+    <%= Category.find(@my_post.category_id).title %>
+  <% else %>
+    <%= "none" %>
+  <% end %>
+</h3>
+<input id="edit-button" type="submit" value="Edit">
