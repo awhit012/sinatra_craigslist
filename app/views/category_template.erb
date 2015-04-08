@@ -1,0 +1,11 @@
+<h1> <%= @this_category.title %> </h1>
+<ol>
+<% @posts.each do |post| %>
+  <%= "<a class=post href=posts/"+ post.id.to_s + "><li>" + post.title + "</li></a>"%>
+  <p> <%= post.description %>
+  <p> Email: <%= post.email %>
+  <p> Price: $<%= post.price %>
+<% end %>
+</ol>
+
+

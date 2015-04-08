@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="/css/application.css">
+   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+  <title>little craigslist</title>
+</head>
+<body>
+  <div id="header">
+    <a href="/">Home</a> |
+    <a href="posts/new_post" id="new-post-link">Create new post</a>
+  </div>
+  <div id="app-container">
+    <%= yield %>
+  </div>
+</body>
+</html>

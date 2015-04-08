@@ -5,6 +5,6 @@ Bundler.require(:default)
 
 $LOAD_PATH.unshift(File.expand_path('.'))
 
-Dir["routes/*.rb"].each do |file_to_load|
+Dir["app/routes/*.rb"].each do |file_to_load|
   require file_to_load
 end

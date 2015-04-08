@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'shotgun'
 gem 'rake'
 gem 'activerecord'
+gem 'faker'
 
 gem "sinatra-activerecord", "2.0.0.rc2"
 

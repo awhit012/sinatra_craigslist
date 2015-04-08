@@ -1,0 +1,7 @@
+<h1>Welcome to Craigs List Jr.</h1>
+<% @categories.each do |category|%>
+  <ul>
+    <%= "<a class=category href=categories/"+ category.id.to_s + "><li>" + category.title + "</li></a>
+    "   %>
+  </ul>
+<% end %>
